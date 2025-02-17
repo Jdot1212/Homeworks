@@ -1,22 +1,93 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework3", "Homework3\Homework3.csproj", "{4BEB3EE6-75C0-4643-9E83-8D07AEDC87A0}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4BEB3EE6-75C0-4643-9E83-8D07AEDC87A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4BEB3EE6-75C0-4643-9E83-8D07AEDC87A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4BEB3EE6-75C0-4643-9E83-8D07AEDC87A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4BEB3EE6-75C0-4643-9E83-8D07AEDC87A0}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-EndGlobal
+using System;
+using System.Globalization;
+
+// Problem 1: Find Min and Max
+class Program
+{
+    static int[] FindMinMax(int[] numbers)
+    {
+        int min = numbers[0]; 
+        int max = numbers[0]; 
+
+        for (int i = 1; i < numbers.Length; i++)
+        {
+            if (numbers[i] < min)
+            {
+                min = numbers[i];
+            }
+            if (numbers[i] > max)
+            {
+                max = numbers[i];
+            }
+        }
+        return new int[] { min, max }; 
+    }
+}
+
+// Problem 2: Absolute Sum
+class Program2
+{
+    static int GetAbsSum(int[] numbers)
+    {
+        int sum = 0;
+
+        foreach (int num in numbers)
+        {
+            sum += Math.Abs(num);
+        }
+
+        return sum;
+    }
+}
+
+// Problem 3: Multiply By Length
+class Program3
+{
+    static int[] MultiplyByLength(int[] numbers)
+    {
+        int length = numbers.Length;
+        int[] result = new int[length];
+
+        for (int i = 0; i < length; i++)
+        {
+            result[i] = numbers[i] * length;
+        }
+
+        return result;
+    }
+}
+
+// Problem 4: Find the Smaller Number (as a string)
+class Program4
+{
+    static string SmallerNum(string num1, string num2)
+    {
+        // Convert the strings to integers and compare them
+        if (int.Parse(num1) < int.Parse(num2))
+        {
+            return num1;
+        }
+        return num2;
+    }
+}
+
+// Problem 5: Count 'D' in a Sentence
+class Program5
+{
+    static int CountDs(string sentence)
+    {
+        int count = 0;
+
+        foreach (char c in sentence)
+        {
+            if (char.ToLower(c) == 'd') // Convert to lowercase and check if it's 'd'
+            {
+                count++;
+            }
+        }
+
+        return count;
+    }
+}
+
+
